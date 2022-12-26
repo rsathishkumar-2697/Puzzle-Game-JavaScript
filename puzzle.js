@@ -5,12 +5,12 @@ let shuffled = false;
 
 let buttonContainer = document.getElementById('tiles');
 
-// Keyboard controls
+
 const RIGHT_ARROW = 39;
 const LEFT_ARROW = 37;
 const UP_ARROW = 40;
 const DOWN_ARROW = 38;
-window.onkeydown = function (event) {
+window.onkeydown = function(event) {
     console.log(event.keyCode);
     if (event.keyCode === RIGHT_ARROW) {
         swap(highlighted + 1);
@@ -32,7 +32,7 @@ function newGame() {
     }, 500);
 }
 
-// Create buttons
+
 function loadTiles(n) {
     for (let b = 1; b <= numberOfTiles; b++) {
         var newTile = document.createElement('button');
@@ -40,7 +40,7 @@ function loadTiles(n) {
         newTile.setAttribute('index', b);
         newTile.innerHTML = b;
         newTile.classList.add('btn');
-        newTile.addEventListener('click', function () {
+        newTile.addEventListener('click', function() {
             swap(parseInt(this.getAttribute('index')));
         });
         buttonContainer.append(newTile);
@@ -75,26 +75,26 @@ function shuffle() {
     }
 }
 
-// Swap tiles 
+
 function swap(clicked) {
     if (clicked < 1 || clicked > (numberOfTiles)) {
         return;
     }
 
-    // Check if we are trying to swap right
+
     if (clicked == highlighted + 1) {
         if (clicked % size != 1) {
             setSelected(clicked);
         }
-        // Check if we are trying to swap left
+
     } else if (clicked == highlighted - 1) {
         if (clicked % size != 0) {
             setSelected(clicked);
         }
-        // Check if we are trying to swap up
+
     } else if (clicked == highlighted + size) {
         setSelected(clicked);
-        // Check if we are trying to swap down 
+
     } else if (clicked == highlighted - size) {
         setSelected(clicked);
     }
@@ -118,7 +118,7 @@ function checkHasWon() {
     return true;
 }
 
-// Applies stylings to the selected tile
+
 function setSelected(index) {
     currentTile = document.getElementById(`btn${highlighted}`);
     currentTileText = currentTile.innerHTML;
