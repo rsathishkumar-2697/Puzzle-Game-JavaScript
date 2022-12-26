@@ -1,7 +1,7 @@
 # Puzzle Game
 A classic puzzle game. 
 
-[View Demo on CodePen](https://codepen.io/rsathishkumar-2697/pen/abjOxrO)
+[View Demo](sathishpuzzle.ccbp.tech)
 
 <img src="./screenshots/sliding-puzzle.gif?raw=true" alt="Sliding Puzzle Animation" width="400"/>
 
